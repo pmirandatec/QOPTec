@@ -1,0 +1,15 @@
+MaxCut_10	-25	
+MaxCut_20	-97
+MaxCut_40	-355
+MaxCut_50	-602
+MaxCut_60	-852
+MaxCut_80	-1475
+MaxCut_90	-1825
+MaxCut_100	-2224
+MaxCut_120	-3202
+MaxCut_140	-4414
+MaxCut_150	-4899
+MaxCut_170	-6362
+MaxCut_200	-8717
+MaxCut_220	-10588
+MaxCut_250	-13460

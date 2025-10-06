@@ -1,0 +1,9 @@
+dimod~=0.12.18
+networkx==3.3
+numpy==2.1.0
+pandas==2.2.2
+tabulate~=0.9.0
+qiskit-optimization~=0.7.0
+dwave-system~=1.32.0
+matplotlib~=3.10.6
+openpyxl~=3.1.5
