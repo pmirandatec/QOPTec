@@ -180,8 +180,8 @@ class MaxCutSolver:
             solver_time_start= time()
             futures = sampler.sample(model, label="MaxCut_NL")
             self.solver_time = time() - solver_time_start
-            self.qpu_time = futures.result().timing['qpu_access_time'] / 1000000
-            self.dwave_time = futures.result().timing['runtime'] / 1000000
+            self.qpu_time = futures.result().info['timing']['qpu_access_time'] / 1000000
+            self.dwave_time = futures.result().info['timing']['runtime'] / 1000000
             self.best_energy = None
             energies = []
             solution_list = []

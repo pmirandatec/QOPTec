@@ -209,8 +209,8 @@ class TravellingSalesmanSolver:
         time_in_solver_start = time()
         futures = sampler.sample(tsp_nl, label="TSP_NL")
         self.solver_time = time() - time_in_solver_start
-        self.dwave_time = float(futures.result().timing['run_time'] / 1000000)
-        self.qpu_time = float(futures.result().timing['qpu_access_time']) / 1000000
+        self.dwave_time = float(futures.result().info['timing']['run_time'] / 1000000)
+        self.qpu_time = float(futures.result().info['timing']['qpu_access_time']) / 1000000
         energies = []
         solution_list = []
 

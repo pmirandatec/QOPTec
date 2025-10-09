@@ -220,8 +220,8 @@ class KnapsackSolver:
         time_in_solver_start = time()
         futures = sampler.sample(kp_nl, time_limit=5, label="Knapsack_NL")
         self.solver_time = time() - time_in_solver_start
-        self.dwave_time = float(futures.result().timing['run_time'] / 1000000)
-        self.qpu_time = float(futures.result().timing['qpu_access_time']) / 1000000
+        self.dwave_time = float(futures.result().info['timing']['run_time'] / 1000000)
+        self.qpu_time = float(futures.result().info['timing']['qpu_access_time']) / 1000000
         self.best_energy = None
         energies = []
         solution_list = []
