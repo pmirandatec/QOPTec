@@ -36,7 +36,7 @@ if __name__ == "__main__":
     solvers = args.solvers
     instances = args.instances
     repetitions = args.repetitions
-    sapi_token = 'DGKE-e6f9971801b06c1dfee947888fda7e8b1cd28660'
+    sapi_token = 'DGKE-b1740b580f6eb8f5f61349bc1ed3f55547739bee'
     solver_map = {
         '.mc': MaxCutSolver,
         '.tsp': TravellingSalesmanSolver,
