@@ -66,7 +66,7 @@ class MaxCutSolver:
         sample_set = sampler.sample_qubo(q_dict,
                                          chain_strength=8,
                                          num_reads=10,
-                                         label='MaxCut_QPU')
+                                         label='test_SoftwareX')
 
         self.solver_time = time() - solver_time_start
         self.dwave_time = sample_set.info['timing']['qpu_access_time']  / 1000000
@@ -101,7 +101,7 @@ class MaxCutSolver:
 
         # Execute solver and extract metrics
         solver_start_time = time()
-        sample_set = sampler.sample(bqm, label="MaxCut_BQM")
+        sample_set = sampler.sample(bqm, label="test_SoftwareX")
         self.solver_time = time() - solver_start_time
         self.dwave_time = sample_set.info.get('run_time') / 1000000
         self.qpu_time = sample_set.info.get('qpu_access_time') / 1000000
@@ -136,7 +136,7 @@ class MaxCutSolver:
 
         # Execute solver and extract metrics
         solver_time_start= time()
-        sample_set = sampler.sample_cqm(cqm, label="MaxCut_CQM")
+        sample_set = sampler.sample_cqm(cqm, label="test_SoftwareX")
         feasible_sampleset = sample_set.filter(lambda d: d.is_feasible)
         self.solver_time = time() - solver_time_start
         self.dwave_time = float(sample_set.info['run_time'] / 1000000)
@@ -178,7 +178,7 @@ class MaxCutSolver:
 
             # Execute solver and extract metrics
             solver_time_start= time()
-            futures = sampler.sample(model, label="MaxCut_NL")
+            futures = sampler.sample(model, label="test_SoftwareX")
             self.solver_time = time() - solver_time_start
             self.qpu_time = futures.result().info['timing']['qpu_access_time'] / 1000000
             self.dwave_time = futures.result().info['timing']['runtime'] / 1000000

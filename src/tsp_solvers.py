@@ -55,7 +55,7 @@ class TravellingSalesmanSolver:
 
         sampler = EmbeddingComposite(DWaveSampler(region="na-west-1", token=self.sapi_token))
         solver_time_start = time()
-        sample_set = sampler.sample(bqm_binary, num_reads=1000, label='TSP_QPU')
+        sample_set = sampler.sample(bqm_binary, num_reads=1000, label='test_SoftwareX')
 
         self.solver_time = time() - solver_time_start
         self.dwave_time = sample_set.info['timing']['qpu_access_time'] / 1000000
@@ -102,7 +102,7 @@ class TravellingSalesmanSolver:
 
         # Execute solver and extract metrics
         solver_time_start = time()
-        sample_set = sampler.sample(bqm_binary, label='TSP_BQM')
+        sample_set = sampler.sample(bqm_binary, label='test_SoftwareX')
         solver_time_end = time()
         self.solver_time = solver_time_end - solver_time_start
         self.dwave_time = sample_set.info.get('run_time') / 1000000
@@ -163,7 +163,7 @@ class TravellingSalesmanSolver:
         self.solver = 'cqm'
 
         solver_time_start = time()
-        sample_set = sampler.sample_cqm(cqm, label="TSP_CQM")
+        sample_set = sampler.sample_cqm(cqm, label="test_SoftwareX")
         sample_set.resolve()
         feasible_sampleset = sample_set.filter(lambda d: d.is_feasible)
         self.solver_time = time() - solver_time_start
@@ -207,7 +207,7 @@ class TravellingSalesmanSolver:
 
         # Execute solver and extract metrics
         time_in_solver_start = time()
-        futures = sampler.sample(tsp_nl, label="TSP_NL")
+        futures = sampler.sample(tsp_nl, label="test_SoftwareX")
         self.solver_time = time() - time_in_solver_start
         self.dwave_time = float(futures.result().info['timing']['run_time'] / 1000000)
         self.qpu_time = float(futures.result().info['timing']['qpu_access_time']) / 1000000

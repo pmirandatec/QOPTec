@@ -60,7 +60,7 @@ class KnapsackSolver:
 
         # Execute solver and extract metrics
         solver_time_start = time()
-        res = sampler.sample(bqm_binary, num_reads=1000, label='Knapsack_QPU')
+        res = sampler.sample(bqm_binary, num_reads=1000, label='test_SoftwareX')
         self.solver_time = time() - solver_time_start
         self.dwave_time = res.info['timing']['run_time'] / 1000000
         self.qpu_time = float(res.info['timing']['qpu_access_time']) / 1000000
@@ -117,7 +117,7 @@ class KnapsackSolver:
 
         # Execute solver and extract metrics
         solver_time_start = time()
-        res = sampler.sample(bqm_binary, label='Knapsack_BQM')
+        res = sampler.sample(bqm_binary, label='test_SoftwareX')
         self.solver_time = time() - solver_time_start
         self.dwave_time = float(res.info.get('run_time')) / 1000000
         self.qpu_time = float(res.info.get('qpu_access_time')) / 1000000
@@ -178,7 +178,7 @@ class KnapsackSolver:
 
         # Execute solver and extract metrics
         solver_time_start = time()
-        sampleset = sampler.sample_cqm(cqm, label='Knapsack_CQM')
+        sampleset = sampler.sample_cqm(cqm, label='test_SoftwareX')
         feasible_sampleset = sampleset.filter(lambda row: row.is_feasible)
         self.solver_time = time() - solver_time_start
         self.dwave_time = float(sampleset.info['run_time'] / 1000000)
@@ -218,7 +218,7 @@ class KnapsackSolver:
 
         # Execute solver and extract metrics
         time_in_solver_start = time()
-        futures = sampler.sample(kp_nl, time_limit=5, label="Knapsack_NL")
+        futures = sampler.sample(kp_nl, time_limit=5, label="test_SoftwareX")
         self.solver_time = time() - time_in_solver_start
         self.dwave_time = float(futures.result().info['timing']['run_time'] / 1000000)
         self.qpu_time = float(futures.result().info['timing']['qpu_access_time']) / 1000000
