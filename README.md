@@ -34,7 +34,7 @@ Parameters:
 
 An example that executes two hybrid algorithms of D-Wave through three instances of the MaxCut, running each of the five independent times could be
 ```bash
-python main_qotec.py -i ../instances/mc/MaxCut_10.mc ../instances/mc/MaxCut_20.mc ../instances/mc/MaxCut_40.mc -s bqm cqm -r 5 -p False -p "[-17, -22, -33]"
+python main_qoptec.py -i ../instances/mc/MaxCut_10.mc ../instances/mc/MaxCut_20.mc ../instances/mc/MaxCut_40.mc -s bqm cqm -r 5 -p False -p "[-17, -22, -33]"
 ```
 
 ---
